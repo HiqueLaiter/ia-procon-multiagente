@@ -1,7 +1,8 @@
 import os
 from crewai import Agent, Task, Crew, Process, LLM  # Adicionado o 'LLM' do CrewAI
-# Você pode remover o "from langchain_openai import ChatOpenAI"
+from dotenv import load_dotenv
 
+load_dotenv()
 
 # -------------------------------------------------------------
 # 1. FUNÇÃO AUXILIAR DE LEITURA (SIMULANDO RAG SIMPLES)
@@ -21,18 +22,13 @@ base_legal_txt = ler_base_conhecimento()
 # -------------------------------------------------------------
 # Certifique-se de que o vLLM está rodando no localhost na porta 8000
 # -------------------------------------------------------------
-# 2. CONFIGURAÇÃO NATIVA DA CONEXÃO COM O NEMOTRON VIA NVIDIA NIM
-# -------------------------------------------------------------
-# -------------------------------------------------------------
-# 2. CONFIGURAÇÃO CORRETA DE ENDPOINT E MAQUEAMENTO DE MODELO
-# -------------------------------------------------------------
+
 nemotron_llm = LLM(
-    model="openai/nvidia/nemotron-4-340b-instruct",
-    base_url="https://nvidia.com",
-    api_key=os.environ.get("NVIDIA_API_KEY"),  # Puxa do .env automaticamente
+    model="openai/nvidia/nemotron-3.5-lightning-30b-a3b",
+    base_url="https://integrate.api.nvidia.com/v1",
+    api_key=os.environ.get("NVIDIA_API_KEY"),
     temperature=0.1
 )
-
 
 
 print("🤖 Iniciando o Sistema Multiagente IA PROCON...")
@@ -95,7 +91,21 @@ tarefa_triagem = Task(
 )
 
 tarefa_pesquisa = Task(
-    description=f"Com base na triagem dos fatos, leia a nossa base de dados legal e localize quais artigos dão ou tiram a razão do cliente.\n\nBASE LEGAL DISPONÍVEL:\n{base_legal_txt}",
+    description=f"""Com base na triagem dos fatos, leia nossa base
+legal e identifique os artigos aplicáveis.
+
+IMPORTANTE:
+- Compras pela internet são abrangidas pelo direito de
+  arrependimento do Art. 49 do CDC.
+- Não afirme que o Art. 49 exclui compras online.
+- Não confunda arrependimento com defeito do produto.
+- O fato de o produto estar em promoção não elimina, por si
+  só, o direito de arrependimento.
+- Fundamente as conclusões na base legal fornecida.
+- Se faltarem informações, declare essa limitação.
+
+BASE LEGAL DISPONÍVEL:
+{base_legal_txt}""",
     expected_output="Uma seleção exata dos artigos aplicáveis ao caso com a explicação literal deles.",
     agent=agente_pesquisador
 )
