@@ -291,10 +291,11 @@ def verificar_aspas(resposta: str, base: str, minimo_palavras: int = 6, reclamac
 # -------------------------------------------------------------
 def analisar(reclamacao: str, etapa=None) -> tuple:
     """Roda os 4 agentes sobre o texto de uma reclamação. Devolve (resposta_final, avisos).
-    etapa (opcional): função chamada com o nome do agente quando ele termina (usada pela interface web)."""
+    etapa (opcional): função chamada com (nome do agente, texto que ele produziu) quando ele termina (interface web)."""
     base = carregar_base()
     llms = {a: criar_llm(sem_raciocinio=a in SEM_RACIOCINIO_PADRAO, agente=a) for a in AGENTES}
-    callbacks = {a: (lambda _saida, a=a: etapa(a)) for a in AGENTES} if etapa else None
+    # etapa(agente, texto_da_saida): a interface web usa o texto para mostrar o que cada agente produziu
+    callbacks = {a: (lambda saida, a=a: etapa(a, getattr(saida, "raw", None) or str(saida))) for a in AGENTES} if etapa else None
     equipe = montar_equipe(reclamacao, base, llms, callbacks)
 
     resultado = equipe.kickoff()
