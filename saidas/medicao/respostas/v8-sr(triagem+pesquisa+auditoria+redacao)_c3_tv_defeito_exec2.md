@@ -1,0 +1,15 @@
+# c3_tv_defeito.txt | rótulo v8-sr(triagem+pesquisa+auditoria+redacao) | execução 2
+
+Em resumo: Com os fatos e as fontes disponíveis, não é possível afirmar que o consumidor tem o direito de restituição imediata baseando-se no prazo de arrependimento de 7 dias, pois o contato com a loja ocorreu em 25/09, 17 dias após o recebimento em 08/09, já fora do prazo legal. No entanto, o consumidor pode ter direitos relacionados ao vício do produto dentro do prazo decadencial.
+
+O que aconteceu: O consumidor comprou uma televisão pela internet no dia 03/09, recebeu o produto em 08/09 e, em 25/09, entrou em contato com a loja reclamando de defeitos (tela apagando e reinicializações). O aparelho foi entregue na assistência técnica no dia 28/09 e devolvido, mas o problema persistiu. A loja negou a restituição alegando que já teria expirado o prazo de 7 dias de arrependimento.
+
+O que diz a lei: O Art. 49, caput do CDC prevê que o consumidor pode desistir do contrato no prazo de 7 dias a contar da assinatura ou do recebimento do produto, quando a contratação ocorrer fora do estabelecimento comercial (como pela internet). O § 1° do mesmo artigo determina a devolução dos valores pagos se o direito for exercido dentro do prazo. Já o Art. 26, § 1° estabelece prazo decadencial de 90 dias para produtos duráveis, contado da entrega efetiva. O Art. 18, § 1° e § 3° garantem ao consumidor, se o vício não for sanado em 30 dias, a possibilidade de exigir substituição, restituição ou abatimento de preço, especialmente o § 3° se a substituição comprometer a qualidade do produto. O relatório aponta que o argumento da empresa parece fundamentado no Art. 49 (arrependimento), e não no Art. 26 (decadência).
+
+O que ainda não dá para afirmar: (1) Se o consumidor exerceu o direito de arrependimento dentro do prazo de 7 dias a contar da assinatura ou recebimento (Art. 49), o que definiria se a negativa da loja está correta; (2) Se o consumidor optou pelas alternativas do Art. 18, § 1° (substituição, restituição ou abatimento) dentro do prazo de 30 dias a contar da entrega na assistência (28/09), ou se o vício foi sanado nesse período; (3) A data exata em que a loja devolveu a televisão após a assistência técnica e se o defeito persistiu, o que afeta a aplicação do prazo de 30 dias para sanar o vício.
+
+O que fazer: 1. Verificar se o consumidor manifestou o arrependimento dentro dos 7 dias a contar do recebimento (até 15/09), o que poderia invalidar o argumento da loja baseada no Art. 49. 2. Se o arrependimento não foi exercido dentro do prazo, reunir documentos da compra (comprovante, e-mails) e da assistência técnica (relatórios, fotos do defeito). 3. Caso o vício persista, escrever à loja solicitando a solução do problema com base no Art. 18 do CDC, alternativamente pedindo substituição do produto, restituição do valor pago ou abatimento do preço, informando que o vício não foi sanado. 4. Se a loja não atender, registrar reclamação no PROCON da cidade ou por meio do Consumidor.gov.br.
+
+## Avisos automáticos
+
+- nenhum

@@ -63,8 +63,11 @@ Modelo: `nvidia/nemotron-3.5-lightning-30b-a3b` (30 B de parâmetros, ~3 B ativo
 gratuita (limite de ~40 requisições/min). É um modelo com "raciocínio"; desligá-lo
 (`enable_thinking=False`) reduziu a saída em ~90% e o tempo de ~335 s para ~25–35 s por análise.
 
-Configuração final (v10-A, 15 execuções): ~47,5 mil tokens de entrada, ~5,2 mil de saída, ~25 s por análise.
-Com raciocínio só no Auditor (v10-B): ~22,5 mil tokens de saída e ~122 s.
+Configuração final (v11, 15 execuções): ~51,3 mil tokens de entrada, ~6,9 mil de saída, ~47 s por análise
+(C1 ~31 s, C2 ~23 s, C3 ~86 s). Triagem e Redator usam `nemotron-3.5-lightning-30b-a3b`; Pesquisador e Auditor usam
+`nvidia/nemotron-3.5-super-vl-120b-a12b` (acesso antecipado no catálogo gratuito), configurados no `.env` com
+`IA_PROCON_MODELO_PESQUISA` e `IA_PROCON_MODELO_AUDITORIA`. Todos com raciocínio desligado.
+Referência anterior (v10-A, só o modelo de 30B): ~25 s e nota ≈ 5,3. Com raciocínio só no Auditor (v10-B): ~122 s.
 
 ## Como os prompts foram ajustados
 
@@ -85,8 +88,9 @@ diferenças de ~0,5 ponto estão dentro do ruído.
 | v9, temperatura 0 | | 4,56 | 43,3 mil | 4,3 mil | 34 s |
 | v9 + Decreto 7.962 | acrescenta o decreto à base | ≈ 4,7–5 | 47,2 mil | 5,2 mil | 35 s |
 | v10-canal | campo "compra fora da loja física" na Triagem | ≈ 6,7 (9 exec.) | 47,9 mil | 5,2 mil | 26 s |
-| **v10-A (final)** | mesma versão, todos sem raciocínio, 15 exec. | ≈ 5,3 | 47,5 mil | 5,2 mil | 25 s |
+| v10-A | mesma versão, todos sem raciocínio, 15 exec. | ≈ 5,3 | 47,5 mil | 5,2 mil | 25 s |
 | v10-B | v10 com raciocínio no Auditor, 15 exec. | ≈ 5,8 | 46,3 mil | 22,5 mil | 122 s |
+| **v11 (final)** | v10 com Nemotron 3.5 Super VL (120B, 12B ativos) na Pesquisa e na Auditoria, 15 exec. | ≈ 7,5 | 51,3 mil | 6,9 mil | 47 s |
 
 \* notas provisórias atribuídas por IA; tokens e tempos são médias por análise (arquivo `medicao.csv`; v6 de
 medição anterior, sem entrada registrada aqui).
@@ -96,10 +100,15 @@ o modelo lia "especialmente por telefone ou a domicílio" do Art. 49 como exclui
 passar a marcar explicitamente se a compra foi fora da loja física; adicionar mais uma fonte à base sozinho não
 resolveu.
 
+## Privacidade
+
+O teste gratuito da NVIDIA registra entradas e saídas e pede para não enviar dados pessoais ou confidenciais.
+Use apenas casos fictícios (como os de `casos_teste/`); não digite reclamações reais com nome, CPF ou endereço.
+
 ## Limitações conhecidas
 
-- **Confiabilidade.** No caso de compra online (C1) a conclusão correta saiu em cerca de 5 de 8 execuções da
-  configuração final; em C3 há erros de contagem de datas e de lógica de prazos. Não use as respostas como
+- **Confiabilidade.** Com o modelo de 30B (v10-A), a conclusão correta no C1 (compra online) saiu em cerca de 5 de 8 execuções; com o
+  modelo maior (v11) saiu em 4 de 5, e em uma execução ainda disse que o Art. 49 não cobre a internet. O C3 é mais lento e ainda hesita se a TV é bem durável. Não use as respostas como
   decisão.
 - Cita "§ 1º" do Art. 49 (a lei só tem parágrafo único) e artigos sem relação com o caso; os verificadores
   avisam sobre existência, **não sobre o conteúdo**.

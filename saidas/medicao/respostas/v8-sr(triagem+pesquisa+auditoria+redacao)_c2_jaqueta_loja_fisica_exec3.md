@@ -1,0 +1,15 @@
+# c2_jaqueta_loja_fisica.txt | rótulo v8-sr(triagem+pesquisa+auditoria+redacao) | execução 3
+
+Em resumo: Com os fatos e as fontes disponíveis, não é possível afirmar que o consumidor tem direito ao reembolso do dinheiro pago, pois o direito de devolução imediata depende de confirmação de que a contratação ocorreu fora do estabelecimento comercial. O pedido de devolução foi feito dentro do prazo decadencial de 90 dias para produtos duráveis, mas a recusa da loja em oferecer dinheiro pode estar vinculada à modalidade da compra.
+
+O que aconteceu: O consumidor comprou uma jaqueta de couro em loja física de um shopping no dia 05/10. Ao experimentar em casa, constatou que a peça ficou muito apertada. No dia 07/10, solicitou a devolução do dinheiro, alegando não haver defeito. A loja se recusou, oferecendo apenas troca por outro tamanho ou crédito, conforme sua política interna.
+
+O que diz a lei: O Art. 26, caput e § 1°, do CDC, estabelece prazo decadencial de 90 dias para produtos duráveis, contados da entrega efetiva. A jaqueta de couro enquadra-se como produto durável, e a solicitação em 07/10 (2 dias após a compra) está dentro desse prazo. Já o Art. 49, caput, do CDC, prevê o direito de arrependimento de 7 dias, mas esse dispositivo vincula o direito à contratação fora do estabelecimento comercial (especialmente por telefone ou a domicílio). Nos trechos disponíveis, não consta que a compra em loja física física dê automaticamente direito a esse arrependimento de 7 dias. O Art. 25, § 1°, vedaria cláusulas que impossibilitem a obrigação de indenizar, mas a situação depende de confirmação do modo de contratação.
+
+O que ainda não dá para afirmar: A base não informa se a compra presencial em loja física física dá direito ao arrependimento de 7 dias previstos no Art. 49, ou se esse dispositivo é exclusivo para contratações à distância (telefone/domicílio). A definição do modo de contratação é crucial para a aplicação do direito de devolução. A base também não informa se a recusa em devolver dinheiro e oferecer apenas troca/ Crédito configura cláusula abusiva vedada pelo Art. 25 do CDC, ou se é prática lícita em trocas presenciais. O relato não informa o ano das datas, o que impede cálculo preciso dos prazos decadenciais e do prazo de 7 dias do arrependimento, caso se confirme a contratação fora do estabelecimento.
+
+O que fazer: 1. Verifique se a compra foi realizada presencialmente em loja física ou se ocorreu por meio de telefone/domicílio, pois isso define se o direito de arrependimento de 7 dias se aplica. 2. Se a compra for confirmada como presencial em estabelecimento comercial, dirija-se à loja e solicite a troca por outro tamanho, caso ainda deseje o produto em tamanho adequado. 3. Caso a compra tenha sido feita à distância, solicite a devolução do dinheiro no prazo de 7 dias, fundamentando-se no Art. 49 do CDC. 4. Guarde o comprovante da compra e o registro da solicitação de devolução, bem como qualquer protocolo fornecido pela loja. 5. Se a loja persistir na recusa indevida, registre reclamação no PROCON da sua cidade ou no Consumidor.gov.br.
+
+## Avisos automáticos
+
+- nenhum

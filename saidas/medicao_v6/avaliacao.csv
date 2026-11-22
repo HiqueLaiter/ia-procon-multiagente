@@ -1,0 +1,20 @@
+﻿data_hora;rotulo;caso;execucao;arquivo_resposta;avisos_artigo_fora_da_base;avisos_aspas_nao_literais;conclusao_correta_0a2;artigo_correto_0a2;condicoes_nao_atendidas_tratadas_0a2;lacunas_e_incertezas_0a2;inventou_algo_0ou1;nota_geral_0a10;observacoes
+2026-11-18 23:20:48;v6;c1_jaqueta_online;1;v6_c1_jaqueta_online_exec1.md;0;0;;;;;;;
+2026-11-18 23:30:07;v6;c1_jaqueta_online;2;v6_c1_jaqueta_online_exec2.md;0;1;;;;;;;
+2026-11-18 23:42:53;v6;c1_jaqueta_online;3;v6_c1_jaqueta_online_exec3.md;0;0;;;;;;;
+2026-11-18 23:49:26;v6;c2_jaqueta_loja_fisica;1;v6_c2_jaqueta_loja_fisica_exec1.md;0;0;;;;;;;
+2026-11-18 23:53:35;v6;c2_jaqueta_loja_fisica;2;v6_c2_jaqueta_loja_fisica_exec2.md;0;0;;;;;;;
+2026-11-18 23:57:33;v6;c2_jaqueta_loja_fisica;3;v6_c2_jaqueta_loja_fisica_exec3.md;0;0;;;;;;;
+2026-11-19 00:03:35;v6;c3_tv_defeito;1;v6_c3_tv_defeito_exec1.md;0;0;;;;;;;
+2026-11-19 00:11:50;v6;c3_tv_defeito;2;v6_c3_tv_defeito_exec2.md;0;1;;;;;;;
+2026-11-19 00:18:20;v6;c3_tv_defeito;3;v6_c3_tv_defeito_exec3.md;0;0;;;;;;;
+2026-11-19 01:40:01;v6-sr(triagem);c1_jaqueta_online;1;v6-sr(triagem)_c1_jaqueta_online_exec1.md;0;0;;;;;;;
+2026-11-19 01:46:30;v6-sr(triagem);c1_jaqueta_online;1;v6-sr(triagem)_c1_jaqueta_online_exec1.md;0;0;;;;;;;
+2026-11-19 01:51:54;v6-sr(triagem);c1_jaqueta_online;2;v6-sr(triagem)_c1_jaqueta_online_exec2.md;0;0;;;;;;;
+2026-11-19 01:56:55;v6-sr(triagem);c1_jaqueta_online;3;v6-sr(triagem)_c1_jaqueta_online_exec3.md;0;0;;;;;;;
+2026-11-19 02:03:54;v6-sr(triagem);c2_jaqueta_loja_fisica;1;v6-sr(triagem)_c2_jaqueta_loja_fisica_exec1.md;0;0;;;;;;;
+2026-11-19 02:09:01;v6-sr(triagem);c2_jaqueta_loja_fisica;2;v6-sr(triagem)_c2_jaqueta_loja_fisica_exec2.md;0;0;;;;;;;
+2026-11-19 02:13:41;v6-sr(triagem);c2_jaqueta_loja_fisica;3;v6-sr(triagem)_c2_jaqueta_loja_fisica_exec3.md;0;2;;;;;;;
+2026-11-19 02:18:53;v6-sr(triagem);c3_tv_defeito;1;v6-sr(triagem)_c3_tv_defeito_exec1.md;1;0;;;;;;;
+2026-11-19 02:28:02;v6-sr(triagem);c3_tv_defeito;2;v6-sr(triagem)_c3_tv_defeito_exec2.md;0;1;;;;;;;
+2026-11-19 02:33:14;v6-sr(triagem);c3_tv_defeito;3;v6-sr(triagem)_c3_tv_defeito_exec3.md;0;1;;;;;;;

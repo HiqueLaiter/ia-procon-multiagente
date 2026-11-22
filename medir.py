@@ -85,7 +85,7 @@ def anexar_csv(caminho: Path, colunas: list, linhas: list) -> None:
 def uma_execucao(caminho_caso: Path, base: str, rotulo: str, n: int, sem_raciocinio=()) -> None:
     """Roda a equipe uma vez, mede e salva. Propaga exceções (o chamador decide se para)."""
     reclamacao = caminho_caso.read_text(encoding="utf-8")
-    llms = {a: app.criar_llm(sem_raciocinio=a in sem_raciocinio) for a in AGENTES}      # um LLM por agente => contagem separada
+    llms = {a: app.criar_llm(sem_raciocinio=a in sem_raciocinio, agente=a) for a in AGENTES}      # um LLM por agente => contagem separada
     marcas = {}                                        # instante em que cada tarefa terminou
 
     def marcador(chave):
@@ -116,7 +116,7 @@ def uma_execucao(caminho_caso: Path, base: str, rotulo: str, n: int, sem_racioci
         else:
             for k in soma:
                 soma[k] += uso[k]
-        linhas.append({**base_linha, "agente": a, "tokens_entrada": uso["entrada"],
+        linhas.append({**base_linha, "modelo": getattr(llms[a], "model", app.MODELO), "agente": a, "tokens_entrada": uso["entrada"],
                        "tokens_saida": uso["saida"], "tokens_total": uso["total"],
                        "chamadas": uso["chamadas"], "segundos": tempos[a],
                        "custo_usd_estimado": custo(uso["entrada"], uso["saida"]) if uso["entrada"] != "" else ""})

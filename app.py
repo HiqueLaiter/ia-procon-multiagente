@@ -68,17 +68,20 @@ def preencher(texto: str, **valores: str) -> str:
     return texto
 
 
-def criar_llm(sem_raciocinio: bool = False) -> LLM:
+def criar_llm(sem_raciocinio: bool = False, agente: str = None) -> LLM:
     """sem_raciocinio=True pede à NVIDIA para desligar o raciocínio interno do modelo
     (chat_template_kwargs.enable_thinking=False). Validado em chamada direta com este modelo;
     dentro do CrewAI a checagem abaixo confirma que o parâmetro foi aceito pelo LLM."""
     chave = os.environ.get("NVIDIA_API_KEY")
     if not chave:
         raise SystemExit("NVIDIA_API_KEY não encontrada. Crie o arquivo .env (veja .env.example).")
+    # Modelo por agente (opcional): IA_PROCON_MODELO_PESQUISA, IA_PROCON_MODELO_AUDITORIA etc.
+    # Sem a variável, o agente usa MODELO. Formato igual ao de MODELO (ex.: openai/<id do catálogo>).
+    modelo = (os.environ.get(f"IA_PROCON_MODELO_{agente.upper()}") if agente else None) or MODELO
     extras = {}
     if sem_raciocinio:
         extras["extra_body"] = {"chat_template_kwargs": {"enable_thinking": False}}
-    llm = LLM(model=MODELO, base_url=URL_API, api_key=chave, temperature=TEMPERATURA, **extras)
+    llm = LLM(model=modelo, base_url=URL_API, api_key=chave, temperature=TEMPERATURA, **extras)
     if sem_raciocinio and "extra_body" not in (getattr(llm, "additional_params", None) or {}):
         raise SystemExit("O CrewAI não guardou o parâmetro extra_body em llm.additional_params; "
                          "o raciocínio NÃO seria desligado. Pare e avise para ajustarmos o método.")
@@ -290,7 +293,7 @@ def analisar(reclamacao: str, etapa=None) -> tuple:
     """Roda os 4 agentes sobre o texto de uma reclamação. Devolve (resposta_final, avisos).
     etapa (opcional): função chamada com o nome do agente quando ele termina (usada pela interface web)."""
     base = carregar_base()
-    llms = {a: criar_llm(sem_raciocinio=a in SEM_RACIOCINIO_PADRAO) for a in AGENTES}
+    llms = {a: criar_llm(sem_raciocinio=a in SEM_RACIOCINIO_PADRAO, agente=a) for a in AGENTES}
     callbacks = {a: (lambda _saida, a=a: etapa(a)) for a in AGENTES} if etapa else None
     equipe = montar_equipe(reclamacao, base, llms, callbacks)
 
